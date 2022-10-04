@@ -1,5 +1,5 @@
 [package]
-name = "i18neste"
+name = "swc_i18neste"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,10 +8,19 @@ crate-type = ["cdylib"]
 
 [profile.release]
 lto = true
+# This removes more dead code
+codegen-units = 1
+# Optimize for size
+opt-level = "s"
+# Optimize for performance, this is default so you don't need to specify it
+# opt-level = "z"
+
+# Strip debug symbols
+strip = "symbols"
 
 [dependencies]
 serde = "1"
-swc_core = { version = "0.28.*", features = ["plugin_transform", "ecma_visit", "ecma_utils", "testing_transform"] }
+swc_core = { version = "0.23.24", features = ["plugin_transform", "ecma_visit", "ecma_utils", "testing_transform"] }
 tracing = "0.1.32"
 
 # .cargo/config defines few alias to build plugin.
