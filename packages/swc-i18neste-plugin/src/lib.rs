@@ -32,7 +32,7 @@ use tracing::info;
 
 const PACKAGE_NAME: &str = "i18neste";
 const IMPORT_SPECIFIER: &str = "__plugin_i18neste_module_";
-const SET_STATIC_STATE_DECORATOR: &str = "setServerSideI18nesteState";
+const SET_STATIC_STATE_DECORATOR: &str = "setServerSideI18NesteState";
 const GET_SERVER_SIDE_PROPS_FUNCTION: &str = "getServerSideProps";
 const GET_STATIC_PROPS_FUNCTION: &str = "getStaticProps";
 
@@ -128,7 +128,7 @@ pub fn process_transform(program: Program, _metadata: TransformPluginProgramMeta
 //     import React from 'react';
 //     import { useTranslation } from 'i18neste';
 
-//     export const getServerSideProps = __plugin_i18neste_module_.setServerSideI18nesteState(async () => {
+//     export const getServerSideProps = __plugin_i18neste_module_.setServerSideI18NesteState(async () => {
 //         return {
 //             props: {
 //                 foo: 'bar',
